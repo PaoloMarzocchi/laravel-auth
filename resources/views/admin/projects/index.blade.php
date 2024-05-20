@@ -36,7 +36,9 @@
                                     <a class="btn btn-dark" href="{{ route('admin.projects.show', $project) }}">
                                         <i class="fa-solid fa-eye fa-xs fa-fw" style="color: #ffffff;"></i>
                                     </a>
-                                    /Edit/Delete
+                                    <a class="btn btn-secondary" href="{{ route('admin.projects.edit', $project) }}">
+                                        <i class="fa-solid fa-pen-to-square fa-xs fa-fw" style="color: #ffffff;"></i>
+                                    </a>/Delete
                                 </td>
                             </tr>
                         @empty

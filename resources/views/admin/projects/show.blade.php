@@ -3,8 +3,9 @@
 @section('content')
     <section class="py-5">
         <div class="container">
-            <div class="d-flex justify-content-end pb-2">
+            <div class="d-flex justify-content-end gap-2 pb-2">
                 <a class="btn btn-secondary" href="{{ route('admin.projects.index') }}">Go Back</a>
+                <a class="btn btn-dark" href="{{ route('admin.projects.edit', $project) }}">Edit</a>
             </div>
             <div class="row py-3">
                 <div class="col-6">

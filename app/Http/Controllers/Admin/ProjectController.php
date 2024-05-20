@@ -52,7 +52,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -60,7 +60,14 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $data = $request->all();
+
+        $slug = Str::slug($request->title, '-');
+        $data['slug'] = $slug;
+
+        $project->update($data);
+
+        return to_route('admin.projects.show', compact('project'));
     }
 
     /**
