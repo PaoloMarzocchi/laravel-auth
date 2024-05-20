@@ -1,8 +1,9 @@
 @extends('layouts.admin')
 
 @section('content')
-    <section class="py-5">
+    <section class="py-3">
         <div class="container">
+            <h2 class="py-2">My projects</h2>
             <div class="table-responsive">
                 <table class="table table-light table-bordered table-striped">
                     <thead>
@@ -28,7 +29,12 @@
                                 </td>
                                 <td width='100'>{{ $project->start_date }}</td>
                                 <td width='100'>{{ $project->end_date }}</td>
-                                <td>View/Edit/Delete</td>
+                                <td>
+                                    <a class="btn btn-dark" href="{{ route('admin.projects.show', $project) }}">
+                                        <i class="fa-solid fa-eye fa-xs fa-fw" style="color: #ffffff;"></i>
+                                    </a>
+                                    /Edit/Delete
+                                </td>
                             </tr>
                         @empty
                             <tr class="">
