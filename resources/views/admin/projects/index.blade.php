@@ -32,13 +32,65 @@
                                 </td>
                                 <td width='100'>{{ $project->start_date }}</td>
                                 <td width='100'>{{ $project->end_date }}</td>
-                                <td>
-                                    <a class="btn btn-dark" href="{{ route('admin.projects.show', $project) }}">
+                                <td width='150'>
+                                    <a class="btn btn-success btn-sm" href="{{ route('admin.projects.show', $project) }}">
                                         <i class="fa-solid fa-eye fa-xs fa-fw" style="color: #ffffff;"></i>
                                     </a>
-                                    <a class="btn btn-secondary" href="{{ route('admin.projects.edit', $project) }}">
+                                    <a class="btn btn-dark btn-sm" href="{{ route('admin.projects.edit', $project) }}">
                                         <i class="fa-solid fa-pen-to-square fa-xs fa-fw" style="color: #ffffff;"></i>
-                                    </a>/Delete
+                                    </a>
+                                    <!-- Modal trigger button -->
+                                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                        data-bs-target="#modalId-{{ $project->id }}">
+                                        <i class="fa-solid fa-trash fa-xs fa-fw" style="color: #ffffff;"></i>
+                                    </button>
+
+                                    <!-- Modal Body -->
+                                    <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+                                    <div class="modal fade" id="modalId-{{ $project->id }}" tabindex="-1"
+                                        data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+                                        aria-labelledby="modalTitleId" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-md"
+                                            role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="modalTitleId">
+                                                        Deleting {{ $project->title }}
+                                                    </h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Attention! You are deleting this project, this action is irreversible.
+                                                    Do you want to continue?
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">
+                                                        No, Go back
+                                                    </button>
+                                                    <form action="{{ route('admin.projects.destroy', $project) }}"
+                                                        method="post">
+                                                        @csrf
+                                                        @method('delete')
+
+                                                        <button type="submit" class="btn btn-danger">
+                                                            Yes, Delete it
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Optional: Place to the bottom of scripts -->
+                                    <script>
+                                        const myModal = new bootstrap.Modal(
+                                            document.getElementById("modalId"),
+                                            options,
+                                        );
+                                    </script>
+
                                 </td>
                             </tr>
                         @empty
