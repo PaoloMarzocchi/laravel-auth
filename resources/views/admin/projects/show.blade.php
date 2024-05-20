@@ -3,6 +3,9 @@
 @section('content')
     <section class="py-5">
         <div class="container">
+            <div class="d-flex justify-content-end pb-2">
+                <a class="btn btn-secondary" href="{{ route('admin.projects.index') }}">Go Back</a>
+            </div>
             <div class="row py-3">
                 <div class="col-6">
                     <img class="mw-100" src="{{ $project->preview }}" alt="{{ $project->title }}">
