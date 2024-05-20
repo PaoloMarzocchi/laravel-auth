@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('title', 50);
+            $table->string('slug', 50);
             $table->string('preview', 255)->nullable();
             $table->string('repo_url', 255)->nullable();
             $table->date('start_date')->nullable();

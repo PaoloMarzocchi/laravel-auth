@@ -6,6 +6,7 @@ use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
@@ -31,6 +32,8 @@ class ProjectController extends Controller
     public function store(StoreProjectRequest $request)
     {
         $data = $request->all();
+        $slug = Str::slug($request->title, '-');
+        $data['slug'] = $slug;
         Project::create($data);
 
         return to_route('admin.projects.index');
