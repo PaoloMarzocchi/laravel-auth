@@ -19,8 +19,12 @@
                             <p>{{ $project->description }}</p>
                         </li>
                         <li>
+                            <strong>Project link: </strong>
+                            <a href="{{ $project->repo_link }}">Go to project</a>
+                        </li>
+                        <li>
                             <strong>Repository link: </strong>
-                            <a href="{{ $project->repo_link }}">Go to project repository</a>
+                            <a href="{{ $project->repo_link }}">Check project code</a>
                         </li>
                         <li>
                             <strong>Start Date: </strong>

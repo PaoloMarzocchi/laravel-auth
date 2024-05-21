@@ -43,6 +43,14 @@
                 </div>
 
                 <div class="mb-3">
+                    <label for="project_url" class="form-label">Project URL</label>
+                    <input type="text" class="form-control" name="project_url" id="project_url"
+                        aria-describedby="project_urlHelper" placeholder="URL project repository here"
+                        value="{{ old('project_url', $project->project_url) }}" />
+                    <small id="project_urlHelper" class="form-text text-secondary">Insert URL of the project</small>
+                </div>
+
+                <div class="mb-3">
                     <label for="repo_url" class="form-label">Repository URL</label>
                     <input type="text" class="form-control" name="repo_url" id="repo_url"
                         aria-describedby="repo_urlHelper" placeholder="URL project repository here"

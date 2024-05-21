@@ -13,6 +13,7 @@
                         <tr>
                             <th scope="col">Preview</th>
                             <th scope="col">Title</th>
+                            <th scope="col">Project link</th>
                             <th scope="col">Repository link</th>
                             <th scope="col">Start date</th>
                             <th scope="col">End date</th>
@@ -27,8 +28,9 @@
                                     <img width="200" src="{{ $project->preview }}" alt="{{ $project->title }}">
                                 </td>
                                 <td>{{ $project->title }}</td>
+                                <td><a href="{{ $project->project_url }}">Go to Project</a></td>
                                 <td>
-                                    <a href="{{ $project->repo_url }}">{{ $project->repo_url }}</a>
+                                    <a href="{{ $project->repo_url }}">Check project code</a>
                                 </td>
                                 <td width='100'>{{ $project->start_date }}</td>
                                 <td width='100'>{{ $project->end_date }}</td>
