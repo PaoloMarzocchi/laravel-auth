@@ -31,10 +31,13 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        $data = $request->all();
+        $validated = $request->validated();
+
         $slug = Str::slug($request->title, '-');
-        $data['slug'] = $slug;
-        Project::create($data);
+
+        $validated['slug'] = $slug;
+
+        Project::create($validated);
 
         return to_route('admin.projects.index');
     }
@@ -60,12 +63,12 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        $data = $request->all();
+        $validated = $request->validated();
 
         $slug = Str::slug($request->title, '-');
-        $data['slug'] = $slug;
+        $validated['slug'] = $slug;
 
-        $project->update($data);
+        $project->update($validated);
 
         return to_route('admin.projects.show', compact('project'));
     }

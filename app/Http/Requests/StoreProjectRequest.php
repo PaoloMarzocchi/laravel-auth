@@ -22,7 +22,14 @@ class StoreProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required|min:3|max:50',
+            'project_url' => 'nullable|max:255',
+            'preview' => 'nullable|max:255',
+            'repo_url' => 'nullable|max:255',
+            'start_date' => 'nullable|date_format:Y-m-d',
+            'end_date' => 'nullable|date_format:Y-m-d',
+            'description' => 'nullable|max:5000',
+
         ];
     }
 }
