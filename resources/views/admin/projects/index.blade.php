@@ -7,6 +7,11 @@
             <div class="d-flex justify-content-end pb-2">
                 <a class="btn btn-success" href="{{ route('admin.projects.create') }}">Add new Project</a>
             </div>
+
+
+            @include('partials.confirm-form')
+
+
             <div class="table-responsive">
                 <table class="table table-light table-bordered table-striped">
                     <thead>
@@ -84,14 +89,6 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                    <!-- Optional: Place to the bottom of scripts -->
-                                    <script>
-                                        const myModal = new bootstrap.Modal(
-                                            document.getElementById("modalId"),
-                                            options,
-                                        );
-                                    </script>
 
                                 </td>
                             </tr>

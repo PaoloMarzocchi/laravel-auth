@@ -4,9 +4,12 @@
     <section class="py-5">
         <div class="container">
             <div class="d-flex justify-content-end gap-2 pb-2">
-                <a class="btn btn-secondary" href="{{ route('admin.projects.index') }}">Go Back</a>
+                <a class="btn btn-secondary" href="{{ route('admin.projects.index') }}">Projects List</a>
                 <a class="btn btn-dark" href="{{ route('admin.projects.edit', $project) }}">Edit</a>
             </div>
+
+            @include('partials.confirm-form')
+
             <div class="row py-3">
                 <div class="col-6">
                     <img class="mw-100" src="{{ $project->preview }}" alt="{{ $project->title }}">
