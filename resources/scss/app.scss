@@ -1,1 +1,19 @@
-@import '~bootstrap/scss/bootstrap'
+@use '~bootstrap/scss/bootstrap';
+@use './partials/site-header';
+@use './partials/variables' as *;
+
+.my_active {
+    /* border-bottom: 1px solid $dark; */
+    color: $primary;
+    font-weight: bold;
+}
+
+.my_danger {
+    background-color: $primary;
+    color: $lightest;
+}
+
+.my_success {
+    background-color: $success;
+    color: $lightest;
+}

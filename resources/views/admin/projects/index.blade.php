@@ -5,7 +5,8 @@
         <div class="container">
             <h2 class="py-2 text-center">My projects</h2>
             <div class="d-flex justify-content-end pb-2">
-                <a class="btn btn-success" href="{{ route('admin.projects.create') }}">Add new Project</a>
+                <a class="btn my_success" href="{{ route('admin.projects.create') }}">Add new
+                    Project</a>
             </div>
 
 
@@ -47,14 +48,14 @@
                                 <td width='100'>{{ $project->start_date }}</td>
                                 <td width='100'>{{ $project->end_date }}</td>
                                 <td width='150'>
-                                    <a class="btn btn-success btn-sm" href="{{ route('admin.projects.show', $project) }}">
+                                    <a class="btn my_success btn-sm" href="{{ route('admin.projects.show', $project) }}">
                                         <i class="fa-solid fa-eye fa-xs fa-fw" style="color: #ffffff;"></i>
                                     </a>
                                     <a class="btn btn-dark btn-sm" href="{{ route('admin.projects.edit', $project) }}">
                                         <i class="fa-solid fa-pen-to-square fa-xs fa-fw" style="color: #ffffff;"></i>
                                     </a>
                                     <!-- Modal trigger button -->
-                                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal"
+                                    <button type="button" class="btn my_danger btn-sm" data-bs-toggle="modal"
                                         data-bs-target="#modalId-{{ $project->id }}">
                                         <i class="fa-solid fa-trash fa-xs fa-fw" style="color: #ffffff;"></i>
                                     </button>
