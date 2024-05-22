@@ -1,12 +1,12 @@
 @extends('layouts.admin')
 
 @section('content')
-    <section class="py-3 ">
+    <section class="py-3 admin_section">
         <div class="container">
             <h2 class="title_section">Edit this project</h2>
             <div class="d-flex justify-content-end pb-2 gap-2">
                 <a class="btn btn-secondary" href="{{ route('admin.projects.index') }}">Projects List</a>
-                <a class="btn btn-warning" href="{{ route('admin.projects.index') }}">View details</a>
+                <a class="btn my_success" href="{{ route('admin.projects.show', $project) }}">View details</a>
             </div>
 
             @include('partials.alert-error-form')

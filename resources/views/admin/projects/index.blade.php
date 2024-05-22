@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <section class="py-3">
+    <section class="py-3 admin_section">
         <div class="container">
             <h2 class="title_section">Projects list</h2>
             <div class="d-flex justify-content-end pb-2">

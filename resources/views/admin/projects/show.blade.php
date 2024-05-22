@@ -1,11 +1,12 @@
 @extends('layouts.admin')
 
 @section('content')
-    <section class="py-5">
+    <section class="py-3 admin_section">
         <div class="container">
+            <h2 class="title_section">{{ $project->title }}</h2>
             <div class="d-flex justify-content-end gap-2 pb-2">
                 <a class="btn btn-secondary" href="{{ route('admin.projects.index') }}">Projects List</a>
-                <a class="btn btn-dark" href="{{ route('admin.projects.edit', $project) }}">Edit</a>
+                <a class="btn btn-warning" href="{{ route('admin.projects.edit', $project) }}">Edit</a>
             </div>
 
             @include('partials.confirm-form')
@@ -20,26 +21,25 @@
                     @endif
                 </div>
                 <div class="col-6">
-                    <h2>{{ $project->title }}</h2>
-                    <ul class="list-unstyled d-flex flex-column gap-3 pt-2">
+                    <ul class="list-unstyled d-flex flex-column gap-2">
                         <li>
                             <strong>Description: </strong>
                             <p>{{ $project->description }}</p>
                         </li>
                         <li>
-                            <strong>Project link: </strong>
+                            <strong>Project link: </strong><br>
                             <a href="{{ $project->repo_link }}">Go to project</a>
                         </li>
                         <li>
-                            <strong>Repository link: </strong>
+                            <strong>Repository link: </strong><br>
                             <a href="{{ $project->repo_link }}">Check project code</a>
                         </li>
                         <li>
-                            <strong>Start Date: </strong>
+                            <strong>Start Date: </strong><br>
                             {{ $project->start_date }}
                         </li>
                         <li>
-                            <strong>End Date: </strong>
+                            <strong>End Date: </strong><br>
                             {{ $project->end_date }}
                         </li>
                     </ul>
