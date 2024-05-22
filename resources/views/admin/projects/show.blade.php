@@ -12,7 +12,12 @@
 
             <div class="row py-3">
                 <div class="col-6">
-                    <img class="mw-100" src="{{ $project->preview }}" alt="{{ $project->title }}">
+                    @if (Str::startsWith($project->preview, 'https://'))
+                        <img class="img-fluid" src="{{ $project->preview }}" alt="{{ $project->title }}">
+                    @else
+                        <img class="img-fluid" src="{{ asset('storage/' . $project->preview) }}"
+                            alt="{{ $project->title }}">
+                    @endif
                 </div>
                 <div class="col-6">
                     <h2>{{ $project->title }}</h2>

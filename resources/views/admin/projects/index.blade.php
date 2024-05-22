@@ -30,8 +30,14 @@
                         @forelse($projects as $project)
                             <tr class="">
                                 <td scope="row">
-                                    <img width="200" src="{{ asset('storage/' . $project->preview) }}"
-                                        alt="{{ $project->title }}">
+
+                                    @if (Str::startsWith($project->preview, 'https://'))
+                                        <img width="200" src="{{ $project->preview }}" alt="{{ $project->title }}">
+                                    @else
+                                        <img width="200" src="{{ asset('storage/' . $project->preview) }}"
+                                            alt="{{ $project->title }}">
+                                    @endif
+
                                 </td>
                                 <td>{{ $project->title }}</td>
                                 <td><a href="{{ $project->project_url }}">Go to Project</a></td>

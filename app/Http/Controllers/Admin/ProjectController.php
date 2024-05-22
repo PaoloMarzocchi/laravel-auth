@@ -77,6 +77,19 @@ class ProjectController extends Controller
 
         $slug = Str::slug($request->title, '-');
         $validated['slug'] = $slug;
+        //dd($validated);
+        if ($request->has('preview')) {
+
+            if ($project->preview) {
+                Storage::delete($project->preview);
+            }
+
+            $preview_path = Storage::put('previews', $validated['preview']);
+            $validated['preview'] = $preview_path;
+        }
+
+
+
 
         $project->update($validated);
 
