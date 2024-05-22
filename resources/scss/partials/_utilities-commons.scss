@@ -1,0 +1,77 @@
+@use './variables' as *;
+
+
+@mixin btn_hover {
+    color: $lightest;
+
+    &:hover {
+
+        filter: opacity(0.8);
+        color: $lightest;
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+.my_active {
+
+    color: $primary;
+    font-weight: bold;
+
+}
+
+
+.my_danger {
+    background-color: $primary;
+    @include btn_hover;
+
+    &:hover {
+        background-color: $primary;
+    }
+}
+
+.my_success {
+    background-color: $success;
+    @include btn_hover;
+
+    &:hover {
+        background-color: $success;
+    }
+}
+
+.my_dark {
+    background-color: $dark;
+    @include btn_hover;
+
+    &:hover {
+        background-color: $dark;
+    }
+}
+
+section {
+    background-color: rgb(236, 236, 236);
+}
+
+
+.title_section {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0 2rem;
+    color: $dark;
+    border-radius: 10px;
+    border-bottom: 2px solid $primary;
+    border-top: 2px solid $primary;
+}
+
+.my_table {
+    text-align: center;
+
+    th {
+        background-color: $dark;
+        color: $lightest;
+        border: 2px solid $primary;
+    }
+
+    td {
+        border: 1px solid $dark;
+    }
+}
