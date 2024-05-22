@@ -101,6 +101,10 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        if ($project->preview) {
+            Storage::delete($project->preview);
+        }
+
         $project->delete();
 
         return to_route('admin.projects.index')->with('message', "Project '$project->title' deleted successfully!");
