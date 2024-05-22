@@ -30,7 +30,8 @@
                         @forelse($projects as $project)
                             <tr class="">
                                 <td scope="row">
-                                    <img width="200" src="{{ $project->preview }}" alt="{{ $project->title }}">
+                                    <img width="200" src="{{ asset('storage/' . $project->preview) }}"
+                                        alt="{{ $project->title }}">
                                 </td>
                                 <td>{{ $project->title }}</td>
                                 <td><a href="{{ $project->project_url }}">Go to Project</a></td>

@@ -6,6 +6,7 @@ use App\Models\Project;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class ProjectController extends Controller
@@ -36,6 +37,15 @@ class ProjectController extends Controller
         $slug = Str::slug($request->title, '-');
 
         $validated['slug'] = $slug;
+
+        //dd($validated);
+
+
+        $preview_path = Storage::put('previews', $validated['preview']);
+
+        $validated['preview'] = $preview_path;
+
+        //dd($validated);
 
         $project = Project::create($validated);
 

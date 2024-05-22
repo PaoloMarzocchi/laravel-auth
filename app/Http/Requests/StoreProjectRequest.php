@@ -24,7 +24,7 @@ class StoreProjectRequest extends FormRequest
         return [
             'title' => 'required|min:3|max:50',
             'project_url' => 'nullable|max:255',
-            'preview' => 'nullable|max:255',
+            'preview' => 'nullable|image|max:500',
             'repo_url' => 'nullable|max:255',
             'start_date' => 'nullable|date_format:Y-m-d',
             'end_date' => 'nullable|date_format:Y-m-d',

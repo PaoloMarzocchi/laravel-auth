@@ -10,7 +10,7 @@
 
             @include('partials.alert-error-form')
 
-            <form action="{{ route('admin.projects.store') }}" method="post">
+            <form action="{{ route('admin.projects.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
 
                 <div class="mb-3">
@@ -25,11 +25,10 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="preview" class="form-label">Preview URL</label>
-                    <input type="text" class="form-control @error('preview') is-invalid @enderror" name="preview"
-                        id="preview" aria-describedby="previewHelper" placeholder="URL project preview here"
-                        value="{{ old('preview') }}" />
-                    <small id="previewHelper" class="form-text text-secondary">Insert URL of the project preview</small>
+                    <label for="preview" class="form-label">Preview image</label>
+                    <input type="file" class="form-control @error('preview') is-invalid @enderror" name="preview"
+                        id="preview" aria-describedby="previewHelper" />
+                    <small id="previewHelper" class="form-text text-secondary">Insert image of the project preview</small>
                     @error('preview')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
