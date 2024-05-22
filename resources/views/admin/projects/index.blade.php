@@ -3,9 +3,9 @@
 @section('content')
     <section class="py-3">
         <div class="container">
-            <h2 class="py-2 mt-3 title_section text-center">Projects list</h2>
+            <h2 class="title_section">Projects list</h2>
             <div class="d-flex justify-content-end pb-2">
-                <a class="btn my_dark" href="{{ route('admin.projects.create') }}">Add new
+                <a class="btn my_success" href="{{ route('admin.projects.create') }}">Add new
                     Project</a>
             </div>
 

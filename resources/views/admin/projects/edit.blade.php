@@ -1,20 +1,22 @@
 @extends('layouts.admin')
 
 @section('content')
-    <section class="py-5 bg-dark text-light">
+    <section class="py-3 ">
         <div class="container">
-            <h2>Edit this project</h2>
-            <div class="d-flex justify-content-end pb-2">
+            <h2 class="title_section">Edit this project</h2>
+            <div class="d-flex justify-content-end pb-2 gap-2">
                 <a class="btn btn-secondary" href="{{ route('admin.projects.index') }}">Projects List</a>
+                <a class="btn btn-warning" href="{{ route('admin.projects.index') }}">View details</a>
             </div>
 
             @include('partials.alert-error-form')
 
-            <form action="{{ route('admin.projects.update', $project) }}" method="post" enctype="multipart/form-data">
+            <form class="my_form" action="{{ route('admin.projects.update', $project) }}" method="post"
+                enctype="multipart/form-data">
                 @csrf
                 @method('put')
 
-                <div class="mb-3">
+                <div class="mb-3 py-2">
                     <label for="title" class="form-label">Title</label>
                     <input type="text" class="form-control @error('title') is-invalid @enderror" name="title"
                         id="title" aria-describedby="titleHelper" placeholder="Project title here"
@@ -25,7 +27,7 @@
                     @enderror
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-3 py-2 border-top">
                     <label for="preview" class="form-label">Preview image</label>
                     <input type="file" class="form-control @error('preview') is-invalid @enderror" name="preview"
                         id="preview" aria-describedby="previewHelper" />
@@ -35,7 +37,7 @@
                     @enderror
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-3 py-2 border-top">
                     <label for="start_date" class="form-label">Start date</label>
                     <input type="text" class="form-control @error('start_date') is-invalid @enderror" name="start_date"
                         id="start_date" aria-describedby="start_dateHelper" placeholder="Project start date here"
@@ -46,7 +48,7 @@
                     @enderror
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-3 py-2 border-top">
                     <label for="end_date" class="form-label">End date</label>
                     <input type="text" class="form-control @error('end_date') is-invalid @enderror" name="end_date"
                         id="end_date" aria-describedby="end_dateHelper" placeholder="Project end_date here"
@@ -57,7 +59,7 @@
                     @enderror
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-3 py-2 border-top">
                     <label for="project_url" class="form-label">Project URL</label>
                     <input type="text" class="form-control @error('project_url') is-invalid @enderror" name="project_url"
                         id="project_url" aria-describedby="project_urlHelper" placeholder="URL project repository here"
@@ -68,7 +70,7 @@
                     @enderror
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-3 py-2 border-top">
                     <label for="repo_url" class="form-label">Repository URL</label>
                     <input type="text" class="form-control @error('repo_url') is-invalid @enderror" name="repo_url"
                         id="repo_url" aria-describedby="repo_urlHelper" placeholder="URL project repository here"
@@ -79,7 +81,7 @@
                     @enderror
                 </div>
 
-                <div class="mb-3">
+                <div class="mb-3 py-2 border-top">
                     <label for="description" class="form-label">Description</label>
                     <textarea class="form-control @error('description') is-invalid @enderror" name="description" id="description"
                         cols="30" rows="10" aria-describedby="descriptionHelper" placeholder="Project description here">{{ old('description', $project->description) }}</textarea>
@@ -89,7 +91,7 @@
                     @enderror
                 </div>
 
-                <button class="btn btn-success" type="submit">Edit project</button>
+                <button class="btn my_success" type="submit">Edit project</button>
 
             </form>
         </div>

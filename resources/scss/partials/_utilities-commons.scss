@@ -51,15 +51,14 @@ section {
     background-color: rgb(236, 236, 236);
 }
 
-
 .title_section {
     width: fit-content;
-    margin: 0 auto;
-    padding: 0 2rem;
+    margin: 1rem auto 0 auto;
+    padding: 1rem 2rem;
     color: $dark;
     border-radius: 10px;
     border-bottom: 2px solid $primary;
-    border-top: 2px solid $primary;
+
 }
 
 .my_table {
@@ -72,6 +71,17 @@ section {
     }
 
     td {
+        border: 1px solid $dark;
+    }
+}
+
+.my_form {
+    border: 2px solid $primary;
+    padding: 2rem;
+    border-radius: 5px;
+
+    input,
+    textarea {
         border: 1px solid $dark;
     }
 }
